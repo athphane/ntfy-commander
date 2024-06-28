@@ -4,6 +4,11 @@ FROM binwiederhier/ntfy AS ntfy_source
 # Stage 2: Create the final image based on the official Python 3.11 image
 FROM python:3.11-slim
 
+LABEL maintainer="Athfan Khaleel <athphane@gmail.com>"
+LABEL org.opencontainers.image.source="https://github.com/athphane/ntfy-commander"
+LABEL org.opencontainers.image.documentation="https://github.com/athphane/ntfy-commander/wiki"
+LABEL org.opencontainers.image.description="A docker image with ntfy and a webui to help administer it"
+
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
     supervisor \
@@ -15,12 +20,12 @@ COPY --from=ntfy_source /usr/bin/ntfy /usr/bin/ntfy
 # Set up a working directory
 WORKDIR /app
 
-# Copy application code
-COPY app /app
-
 # Copy requirements file and install dependencies
 COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
+
+# Copy application code
+COPY app /app
 
 # Create a directory for supervisor configuration files
 RUN mkdir -p /etc/supervisor/conf.d
