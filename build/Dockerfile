@@ -29,7 +29,7 @@ RUN mkdir -p /etc/supervisor/conf.d
 COPY build/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 # Expose the port on which your FastAPI app will run (default 8000)
-EXPOSE 8000
+EXPOSE 80 8000
 
 # Command to run supervisord
 CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
