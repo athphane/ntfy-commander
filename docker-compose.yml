@@ -1,0 +1,8 @@
+services:
+  ntfy-commander:
+    build:
+      context: ./
+      dockerfile: build/Dockerfile
+    hostname: ntfy-commander
+    image: ghcr.io/athphane/ntfy-commander
+    

@@ -1,0 +1,60 @@
+[
+    {
+        "username": "athphane-admin",
+        "role": "admin"
+    },
+    {
+        "username": "athphane",
+        "role": "user",
+        "grants": [
+            {
+                "topic": "*",
+                "permission": "read-write"
+            }
+        ]
+    },
+    {
+        "username": "btv",
+        "role": "user",
+        "grants": [
+            {
+                "topic": "btv-*",
+                "permission": "read-write"
+            }
+        ]
+    },
+    {
+        "username": "shihaam",
+        "role": "user",
+        "grants": [
+            {
+                "topic": "shihaam",
+                "permission": "read-write"
+            }
+        ]
+    },
+    {
+        "username": "uptime-kuma",
+        "role": "user",
+        "grants": [
+            {
+                "topic": "uptime-kuma",
+                "permission": "read-write"
+            },
+            {
+                "topic": "*",
+                "permission": "deny-all"
+            }
+        ]
+    },
+    {
+        "username": "*",
+        "role": "anonymous",
+        "grants": [
+            {
+                "topic": "*",
+                "permission": "deny-all"
+            }
+        ]
+    }
+]
