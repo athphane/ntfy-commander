@@ -17,12 +17,15 @@
 </template>
 
 <script setup>
-export default {
+import axios from 'axios';
 
-}
 
 function get_total_users() {
-  fetch('')
+  axios.get('http://localhost:35000/users/total').then(function(response) {
+    console.log(response.data);
+  })
 }
+
+get_total_users()
 
 </script>
