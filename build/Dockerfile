@@ -18,14 +18,14 @@ RUN apt-get update && apt-get install -y \
 COPY --from=ntfy_source /usr/bin/ntfy /usr/bin/ntfy
 
 # Set up a working directory
-WORKDIR /app
+WORKDIR /server
 
 # Copy requirements file and install dependencies
 COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --no-cache-dir -r /server/requirements.txt
 
 # Copy application code
-COPY app /app
+COPY server /server
 
 # Create a directory for supervisor configuration files
 RUN mkdir -p /etc/supervisor/conf.d
