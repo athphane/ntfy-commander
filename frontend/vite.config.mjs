@@ -39,6 +39,9 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
+        {
+          axios: [['default', 'axios']]
+        }
       ],
       eslintrc: {
         enabled: true,

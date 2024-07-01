@@ -1,3 +1,5 @@
+import asyncio
+from random import randint, random
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -17,4 +19,15 @@ async def root():
 
 @app.get('/users/total')
 async def users_total():
-    return {'value': 20}
+    await asyncio.sleep(randint(1,1))
+    return randint(1, 100)
+
+@app.get('/topics/total')
+async def topics_total():
+    await asyncio.sleep(randint(1,1))
+    return randint(1, 100)
+
+@app.get('/tokens/total')
+async def tokens_total():
+    await asyncio.sleep(randint(1,1))
+    return randint(1, 100)

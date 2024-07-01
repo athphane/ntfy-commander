@@ -1,7 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer">
-      <v-list-item title="My Application" subtitle="Vuetify"></v-list-item>
+      <v-list-item title="ntfy-commander"></v-list-item>
       <v-divider></v-divider>
       <v-list-item router to="/" title="Dashboard"></v-list-item>
       <v-list-item router to="/users" title="Users"></v-list-item>
@@ -29,7 +29,9 @@
 
 <script>
   export default {
-    data: () => ({ drawer: null }),
+    data: () => ({ 
+      drawer: null,
+     }),
   }
 
   function something() {
